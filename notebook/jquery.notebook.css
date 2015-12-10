@@ -1,0 +1,282 @@
+.jquery-notebook.editor {
+   /* position: relative;*/
+    outline: none;
+}
+
+.jquery-notebook.bubble {
+    position: absolute;
+    z-index: 99999;
+    height: 35px;
+    left: 0;
+    top: 0;
+    opacity: 0;
+    border-radius: 5px;
+    border: 1px solid #2A3B3;
+    box-shadow: 0 2px 3px rgba(0,0,0,0.2), inset 0 0 2px rgba(255,255,255,0.2); /* Bubble Shadows */
+    background: rgb(35,164,193);
+	background: -moz-linear-gradient(top,  rgba(35,164,193,1) 0%, rgba(40,40,39,1) 100%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(35,164,193,1)), color-stop(100%,rgba(40,40,39,1)));
+	background: -webkit-linear-gradient(top,  rgba(35,164,193,1) 0%,rgba(40,40,39,1) 100%);
+	background: -o-linear-gradient(top,  rgba(35,164,193,1) 0%,rgba(40,40,39,1) 100%);
+	background: -ms-linear-gradient(top,  rgba(35,164,193,1) 0%,rgba(40,40,39,1) 100%);
+	background: linear-gradient(to bottom,  rgba(35,164,193,1) 0%,rgba(40,40,39,1) 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#373735', endColorstr='#282827',GradientType=0 );
+    transition: 0.15s ease-in-out;
+    -webkit-transition: 0.15s ease-in-out;
+}
+
+.jquery-notebook.bubble.active {
+    opacity: 1;
+}
+
+.jquery-notebook.bubble.jump {
+    transition: opacity 0.15s;
+    -webkit-transition: opacity 0.15s;
+}
+
+.jquery-notebook.bubble ul {
+    padding: 0 5px;
+    margin: 0;
+    list-style: none;
+}
+
+.jquery-notebook.bubble ul li {
+    display: inline;
+}
+
+.jquery-notebook input[type=text] {
+    width: 200px;
+    height: 28px;
+    margin: 6px 0 0 10px;
+    background: none;
+    border: none;
+    outline: none;
+    color:#fff;
+    font-size: 14px;
+    float: left;
+}
+
+.jquery-notebook.bubble button {
+    outline: none;
+    border: none;
+    background: transparent;
+    width: 25px;
+    height: 34px;
+    font-family: FontAwesome;
+    color: white;
+    font-size: 12pt;
+    cursor: pointer;
+    -webkit-font-smoothing: antialiased;
+}
+.jquery-notebook.bubble button.active {
+    color: #60D778;
+}
+.jquery-notebook.bubble button.font:after {
+     content: "\f031";
+}
+.jquery-notebook.bubble button.size:after {
+    content: "\f034";
+}
+.jquery-notebook.bubble button.bold:after {
+    content: "\f032";
+}
+
+.jquery-notebook.bubble button.italic:after {
+    content: "\f033";
+}
+
+.jquery-notebook.bubble button.underline:after {
+    content: "\f0cd";
+}
+.jquery-notebook.bubble button.color:after{
+    content: "\f031";
+    color: yellow;
+}
+.jquery-notebook.bubble button.left:after {
+    content: "\f036";
+}
+.jquery-notebook.bubble button.right:after {
+    content: "\f038";
+}
+.jquery-notebook.bubble button.center:after {
+    content: "\f037";
+}
+.jquery-notebook.bubble button.justify:after {
+    content: "\f039";
+}
+.jquery-notebook.bubble button.anchor:after {
+    content: "\f0c1";
+}
+
+.jquery-notebook.bubble button.paste:after {
+    content: "\f0ea";
+}
+
+.jquery-notebook.bubble button.ul:after {
+    font-family: inherit;
+    content: "\f0ca";
+}
+
+.jquery-notebook.bubble button.ol:after {
+    font-family: inherit;
+    content: "\f0cb";
+}
+
+.jquery-notebook.bubble button.bgcolor:after {
+    content: "\f031";
+    color: black;
+    background-color: yellow;
+}
+.jquery-notebook.bubble button.clear:after {
+    content:"\f12d";
+}
+.jquery-notebook.bubble button.indent:after{
+    content: "\f03c";
+}
+.jquery-notebook.bubble button.outdent:after{
+    content: "\f03b";
+}
+.jquery-notebook.bubble .menu-panel{
+    display: none;
+    position: absolute;
+    top: 40px;
+    background-color:  rgba(45, 81, 80, 0.87);
+    margin: 0;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -o-border-radius: 5px;
+    -ms-border-radius: 5px;
+    border-radius: 5px;
+    -webkit-box-shadow: 0 2px 3px rgba(0,0,0,0.2), inset 0 0 2px rgba(255,255,255,0.2);
+    -moz-box-shadow: 0 2px 3px rgba(0,0,0,0.2), inset 0 0 2px rgba(255,255,255,0.2);
+    -o-box-shadow: 0 2px 3px rgba(0,0,0,0.2), inset 0 0 2px rgba(255,255,255,0.2);
+    -ms-box-shadow: 0 2px 3px rgba(0,0,0,0.2), inset 0 0 2px rgba(255,255,255,0.2);
+    box-shadow: 0 2px 3px rgba(0,0,0,0.2), inset 0 0 2px rgba(255,255,255,0.2);
+}
+.jquery-notebook.bubble .link-area {
+    right: 0;
+}
+.jquery-notebook.bubble .link-area button {
+    float: right;
+}
+.jquery-notebook.bubble .link-area button:after {
+    content: "\f00d";
+}
+.jquery-notebook.bubble .size-panel{
+    -webkit-transform: translateX(50%);
+    -moz-transform: translateX(50%);
+    -ms-transform: translateX(50%);
+    -o-transform: translateX(50%);
+    transform: translate(50%);
+}
+.jquery-notebook.bubble .family-panel>ul,.jquery-notebook.bubble .size-panel>ul{
+    min-width: 70px;
+    max-height: 195px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    box-sizing: border-box;
+    color: #fff;
+}
+
+.jquery-notebook.bubble .family-panel>ul>li,.jquery-notebook.bubble .size-panel>ul>li{
+    display: list-item;
+    text-align: center;
+    border-bottom-color: rgba(255, 255, 255, 0.33);
+    border-bottom-style: solid;
+    border-bottom-width: 1px;
+}
+.jquery-notebook.bubble .family-panel li a,.jquery-notebook.bubble .size-panel li a{
+    padding: 8px 0;
+    cursor: pointer;
+    color: #fff;
+    text-decoration: none;
+    display: block;
+    clear: both;
+    line-height: 16px;
+    white-space: nowrap;
+}
+.jquery-notebook.bubble .family-panel li a{
+    padding-left: 15px;
+    padding-right: 20px;
+}
+.jquery-notebook.bubble .color-panel{
+    width: 232px;
+    padding: 10px 15px;
+    color: #400909;
+    white-space: normal;
+    -webkit-transform: translateX(30%);
+    -moz-transform: translateX(30%);
+    -ms-transform: translateX(30%);
+    -o-transform: translateX(30%);
+    transform: translate(30%);
+}
+.jquery-notebook.bubble .color-panel>ul{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+.jquery-notebook.bubble .color-panel>ul>li{
+    position: relative;
+    display: inline-block;
+    vertical-align: middle;
+    width: 32px;
+    height: 40px;
+    touch-action: none;
+    color: #400909;
+    white-space: normal;
+}
+.jquery-notebook.bubble .color-panel .tn-color-circle{
+    width: 28px;
+    height: 28px;
+    display: inline-block;
+    vertical-align: middle;
+    cursor: pointer;
+    overflow: hidden;
+    transition: .2s;
+    border: 2px solid #eee;
+    border-radius: 50%;
+    background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMCAIAAADZF8uwAAAAGUlEQVQYV2M4gwH+YwCGIasIUwhT25BVBADtzYNYrHvv4gAAAABJRU5ErkJggg==);
+}
+.jquery-notebook.bubble .color-panel .face{
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+}
+.jquery-notebook.bubble .color-panel .action-area {
+    text-align: right;
+}
+.jquery-notebook.bubble .color-panel .tn-color-picker {
+    position: relative;
+    display: inline-block;
+    vertical-align: middle;
+}
+.jquery-notebook.bubble .color-panel .sp-preview{
+    position: relative;
+    display: inline-block;
+    vertical-align: middle;
+    width: 28px;
+    height: 28px;
+    border-radius: 100%;
+    -moz-border-radius: 100%;
+    -webkit-border-radius: 100%;
+    overflow: hidden;
+    border: 2px solid #eee;
+    background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMCAIAAADZF8uwAAAAGUlEQVQYV2M4gwH+YwCGIasIUwhT25BVBADtzYNYrHvv4gAAAABJRU5ErkJggg==);
+}
+.jquery-notebook.bubble .color-panel .sp-preview:not(.col-active) .sp-preview-inner{
+     background-color: rgba(60,69,86,.95)!important;
+     background-image: url(./images/clr-popup-add.png);
+}
+.jquery-notebook.bubble .color-panel .sp-preview-inner{
+    cursor: pointer;
+    background-position: center center;
+    background-size: 25px;
+    background-repeat: no-repeat;
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+}

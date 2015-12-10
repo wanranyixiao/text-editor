@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>意媒-编辑</title>
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+	<meta name="author" content="">
+	<meta name="description" content="">
+	<meta name="keywords" content="">
+  <link rel="stylesheet" type="text/css" href="./notebook/font-awesome/css/font-awesome.css">
+  <link rel="stylesheet" type="text/css" href="./notebook/jquery.notebook.css">
+<style type="text/css">
+body{
+  width: 1100px;
+  height: 500px;
+}
+.box{
+  margin: 50px auto;
+  border: 1px solid gray;
+  width: 500px;
+  padding: 20px;
+}
+.editor,{
+    width: 100%;
+    border: 1px solid red;
+    min-height: 1rem;
+}
+
+</style>
+  <script>
+    function isIE() { 
+      if (!!window.ActiveXObject || "ActiveXObject" in window)  
+          return true;  
+      else  
+          return false;  
+    }  
+    if(isIE()){
+      document.body.innerHTML = "";
+      document.write('请使用非IE浏览器');
+    }
+  </script>
+</head>
+<body>
+
+<div class="box">
+  <div>shangji</div>
+	<div class="editor1" id="editor1">
+      <h1>JQUERY NOTEBOOK DEMO</h1>
+            <p>一个简单，干净，优雅的所见即所得的富文本编辑器.<strong>用鼠标选中文字可看到效果</strong></p>
+            <p>This jQuery plugin is released under the MIT license. You can check out the project and see how extremely simple it is to use this editor on your application by clicking on the Github ribbon on the top corner of this page. Feel free to contribute with this project by registering any bug that you may encounter as an issue on Github, and working on the issues that are already there. I'm looking forward to seeing your pull request!</p>
+            <p>Now, just take a time to test the editor. Yes, <b>this div is the editor</b>. Try to edit this text, select a part of this text and don't forget to try the basic text editor keyboard shortcuts.</p>
+  </div>
+  <div class="editor2" id="editor2"> xiaji<p>This jQuery plugin is released under the MIT license. You can check out the project and see how extremely simple it is to use this editor on your application by clicking on the Github ribbon on the top corner of this page. Feel free to contribute with this project by registering any bug that you may encounter as an issue on Github, and working on the issues that are already there. I'm looking forward to seeing your pull request!</p> </div>
+   <div> xiaji1 </div>
+</div>
+ <div class="editor3" id="editor3"> 2222 </div>
+</body>
+<script type="text/javascript" src="./notebook/jquery.min.js"></script>
+<script type="text/javascript" src="./notebook/jquery.notebook.js"></script>
+<script src="./notebook/jquery.minicolors.min.js"></script>
+<link rel="stylesheet" href="./notebook/jquery.minicolors.css">
+<script type="text/javascript">
+$(document).ready(function() {
+    $('.editor1').notebook({
+        autoFocus: true,
+        toolbarTranslate:true
+    });
+     $('.editor2').notebook({
+        autoFocus: true,
+        toolbarTranslate:false,
+         fontsize:['12px','14px','16px','18px','20px','22px']
+    });
+      $('.editor3').notebook({
+        autoFocus: true,
+        toolbarTranslate:true
+    });
+});
+</script>
+</html>
