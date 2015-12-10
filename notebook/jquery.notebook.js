@@ -423,7 +423,6 @@
                 var tag;
                 if($(this).attr('is-translate') == "true"){
                     tag = $('.jquery-notebook.bubble.translate');
-                    console.log(tag);
                     if (!tag.length) {
                         tag = utils.html.addTag($(d.body), 'div', false, false);
                         tag.addClass('jquery-notebook bubble translate');
@@ -740,7 +739,6 @@
                 }
             },
             mouseClick: function(e) {
-                console.log('mouseClick');
                 cache.isSelecting = true;
                 if ($(this).parent().find('.bubble:visible').length) {
                     var bubbleTag = $(this).parent().find('.bubble:visible'),
@@ -756,7 +754,6 @@
             },
             mouseUp: function(e) {
                 var editor = this;
-                console.log(editor);
                 cache.isSelecting = false;
                 setTimeout(function() {
                     var s = utils.selection.save();
